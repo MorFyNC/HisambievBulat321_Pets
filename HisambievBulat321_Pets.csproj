@@ -184,8 +184,6 @@
     <Resource Include="Resources\Images\7.jpg" />
     <Resource Include="Resources\Images\8.jpg" />
     <Resource Include="Resources\Images\9.jpg" />
-    <Resource Include="Resources\Images\10.jpg" />
-    <Resource Include="Resources\Images\11.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

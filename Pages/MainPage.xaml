@@ -9,14 +9,18 @@
       Title="MainPage">
 
     <Grid>
-        <Grid >
-            <ListView x:Name="LstView" >
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <ListView x:Name="LstView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid x:Name="grdChampions" HorizontalAlignment="Left" Height="336" Margin="65,60,0,0" VerticalAlignment="Top" Width="671">
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <Image Source="{Binding Image}" Height="300" Width="300"></Image>
-                                <TextBlock Text="{Binding Description}"></TextBlock>
+                                <Image Source="{Binding Image}" Height="300" Width="300" HorizontalAlignment="Center"></Image>
+                                <TextBlock Text="{Binding Description}" HorizontalAlignment="Center"></TextBlock>
                             </StackPanel>
                         </Grid>
                     </DataTemplate>
@@ -26,5 +30,6 @@
                 <Button Click="Add_Click">Add</Button>
             </StackPanel>
         </Grid>
+        
     </Grid>
 </Page>

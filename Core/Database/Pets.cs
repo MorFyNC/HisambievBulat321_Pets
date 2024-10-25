@@ -29,7 +29,7 @@ namespace HisambievBulat321_Pets.Core.Database
         public virtual ICollection<Photo> Photo { get; set; }
         public override string ToString()
         {
-            return Name;
+            return Name.Trim();
         }
     }
 }
