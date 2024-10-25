@@ -37,6 +37,7 @@ namespace HisambievBulat321_Pets
             }
             UserContext.Authorise(LoginCb.SelectedItem as Users);
             UIUpdater.Navigate(new MainPage());
+            UIUpdater.SwitchTopMenu();
         }
     }
 }

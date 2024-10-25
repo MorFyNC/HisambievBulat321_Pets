@@ -23,9 +23,5 @@ namespace HisambievBulat321_Pets
             var addp = new AddPage();
             UIUpdater.Navigate(addp);
         }
-        private void Remove_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

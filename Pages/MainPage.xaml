@@ -10,11 +10,6 @@
 
     <Grid>
         <Grid >
-            <StackPanel Orientation="Horizontal">
-                <TextBox x:Name="Name" Width="100"></TextBox>
-                <Button Click="Add_Click">Add</Button>
-                <Button Click="Remove_Click">Remove</Button>
-            </StackPanel>
             <ListView x:Name="LstView" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -27,6 +22,9 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <StackPanel Orientation="Horizontal">
+                <Button Click="Add_Click">Add</Button>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>

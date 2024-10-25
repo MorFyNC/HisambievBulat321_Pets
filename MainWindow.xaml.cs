@@ -26,6 +26,9 @@ namespace HisambievBulat321_Pets
             InitializeComponent();
             MainFrame.Navigate(new AuthPage());
             UIUpdater.InitFrame(MainFrame);
+            UIUpdater.InitTopMenu(TopSp);
         }
+
+        private void LogoutBtn_Click(object sender, RoutedEventArgs e) => UserContext.Logout();
     }
 }

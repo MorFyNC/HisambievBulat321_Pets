@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
     <Grid>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="TopSp" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10" Visibility="Collapsed">
+            <TextBlock x:Name="UsernameTb" Text="{Binding UserContext.CurrentUser.Name}" Padding="10 0" TextAlignment="Center" FontWeight="Bold" FontSize="20"></TextBlock>
+            <Button x:Name="LogoutBtn" Padding="20 0" Click="LogoutBtn_Click">Выйти</Button>
+        </StackPanel>
+        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>
