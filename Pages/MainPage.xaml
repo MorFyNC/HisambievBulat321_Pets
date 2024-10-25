@@ -13,13 +13,17 @@
             <RowDefinition/>
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBox x:Name="SearchTb" Width="200" TextChanged="SearchTb_TextChanged"></TextBox>
+        </StackPanel>
+        
         <Grid Grid.Row="1">
             <ListView x:Name="LstView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid x:Name="grdChampions" HorizontalAlignment="Left" Height="336" Margin="65,60,0,0" VerticalAlignment="Top" Width="671">
+                        <Grid x:Name="grdChampions" HorizontalAlignment="Left" Height="160" Margin="65,60,0,0" VerticalAlignment="Top" Width="671">
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                <Image Source="{Binding Image}" Height="300" Width="300" HorizontalAlignment="Center"></Image>
+                                <Image Source="{Binding Image}" Height="150" Width="150" HorizontalAlignment="Center"></Image>
                                 <TextBlock Text="{Binding Description}" HorizontalAlignment="Center"></TextBlock>
                             </StackPanel>
                         </Grid>

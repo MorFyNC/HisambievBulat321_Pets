@@ -23,5 +23,10 @@ namespace HisambievBulat321_Pets
             var addp = new AddPage();
             UIUpdater.Navigate(addp);
         }
+
+        private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            LstView.ItemsSource = dbManager.GetPhotos().Where(x => x.Description.ToLower().Contains(SearchTb.Text.ToLower()) && x.Pets.Users == UserContext.GetUser());
+        }
     }
 }
