@@ -15,6 +15,10 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <TextBox x:Name="SearchTb" Width="200" TextChanged="SearchTb_TextChanged"></TextBox>
+            <ComboBox x:Name="SortCb" SelectionChanged="SortCb_SelectionChanged">
+                <ComboBoxItem x:Name="Ascending" Content="По возрастанию"></ComboBoxItem>
+                <ComboBoxItem x:Name="Descending" Content="По убыванию"></ComboBoxItem>
+            </ComboBox>
         </StackPanel>
         
         <Grid Grid.Row="1">

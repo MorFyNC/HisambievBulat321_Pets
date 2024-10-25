@@ -16,6 +16,7 @@ namespace HisambievBulat321_Pets
             InitializeComponent();
             LstView.ItemsSource = dbManager.GetPhotos().Where(x => x.Pets.Users == UserContext.GetUser());
             UIUpdater.InitList(LstView);
+            SortCb.SelectedItem = Ascending;
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -24,9 +25,31 @@ namespace HisambievBulat321_Pets
             UIUpdater.Navigate(addp);
         }
 
+        private void GetPhotos()
+        {
+            var source = dbManager.GetPhotos()
+                .Where(x =>
+                (x.Description.ToLower().Contains(SearchTb.Text.ToLower())
+                || SearchTb.Text == "")
+                && x.Pets.Users == UserContext.GetUser())
+                .OrderBy(x =>
+                x.Description)
+                .ToList();
+
+            if (SortCb.SelectedItem == Descending)
+                source.Reverse();
+
+            LstView.ItemsSource = source;
+        }
+
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
         {
-            LstView.ItemsSource = dbManager.GetPhotos().Where(x => x.Description.ToLower().Contains(SearchTb.Text.ToLower()) && x.Pets.Users == UserContext.GetUser());
+            GetPhotos();
+        }
+
+        private void SortCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            GetPhotos();
         }
     }
 }
